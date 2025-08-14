@@ -1,0 +1,15 @@
+
+version: "3.8"
+services:
+  shorty:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - BASE_URL=http://localhost:8000
+      - SECRET_KEY=change-me
+      - DB_PATH=/data/urls.db
+    volumes:
+      - shorty_data:/data
+volumes:
+  shorty_data:

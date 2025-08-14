@@ -1,0 +1,27 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-7">
+    <div class="card shadow-sm">
+      <div class="card-body p-4">
+        <h1 class="h4 mb-3">Info</h1>
+        <dl class="row">
+          <dt class="col-sm-3">Short URL</dt>
+          <dd class="col-sm-9"><a href="{{ short_url }}" target="_blank">{{ short_url }}</a></dd>
+
+          <dt class="col-sm-3">Original URL</dt>
+          <dd class="col-sm-9"><a href="{{ original_url }}" target="_blank">{{ original_url }}</a></dd>
+
+          <dt class="col-sm-3">Clicks</dt>
+          <dd class="col-sm-9">{{ clicks }}</dd>
+
+          <dt class="col-sm-3">Created</dt>
+          <dd class="col-sm-9"><code>{{ created_at }}</code></dd>
+        </dl>
+        <p class="mt-3"><a href="{{ url_for('index') }}">&larr; Back</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
